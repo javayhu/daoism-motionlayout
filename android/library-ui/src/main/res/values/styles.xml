@@ -1,0 +1,68 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+
+        <!-- set the checked state color for control like checkbox -->
+        <item name="colorAccent">@color/color_accent</item>
+        <!-- set the ripple color for control like button clicks -->
+        <item name="android:colorControlHighlight">@color/color_accent</item>
+
+        <!-- 不设置全局的状态栏和导航栏的颜色 -->
+        <!--<item name="android:statusBarColor">@color/color_primary</item>-->
+        <!--<item name="android:navigationBarColor">@color/color_primary</item>-->
+
+        <!-- 设置状态来背景透明并且状态栏是浅色模式 -->
+        <!--<item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
+        <item name="android:statusBarColor">@color/color_transparent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+
+        <item name="android:actionBarSize">@dimen/actionbar_height</item>
+        <item name="attr_toolbar">@style/Widget.Daoism.Toolbar</item>
+
+        <item name="android:windowAnimationStyle">@style/DaoismActivityAnimationStyle</item>
+    </style>
+
+    <!-- style for widgets -->
+    <style name="Widget.Daoism" parent="android:Widget" />
+
+    <!-- toolbar has only one style -->
+    <style name="Widget.Daoism.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?android:actionBarSize</item>
+        <item name="android:background">@color/color_primary</item>
+        <item name="android:elevation">6dp</item>
+
+        <!-- default navigation icon is back action icon, the second one is for compatibility -->
+        <item name="android:navigationIcon">@drawable/ic_back_white</item>
+        <item name="navigationIcon">@drawable/ic_back_white</item>
+
+        <!-- set style for toolbar title-->
+        <item name="titleTextAppearance">@style/Widget.Daoism.ToolbarTitle</item>
+
+        <!-- remove default margin between the navigation icon and title -->
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+    </style>
+
+    <!-- toolbar title style, different activity may have different style -->
+    <style name="Widget.Daoism.ToolbarTitle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">1</item>
+        <!-- set ellipsize to marquee does not work -->
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- style for activity transition -->
+    <style name="DaoismActivityAnimationStyle" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+</resources>

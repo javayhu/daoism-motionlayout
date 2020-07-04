@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- style for toolbar -->
+    <attr name="attr_toolbar" format="reference" />
+
+</resources>

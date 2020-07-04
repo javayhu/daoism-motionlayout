@@ -1,0 +1,22 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation Deps.library_timer
+
+    implementation Deps.androidx_appcompat
+    implementation Deps.androidx_recyclerview
+    implementation Deps.androidx_constraint_layout
+    implementation Deps.androidx_activity
+    implementation Deps.androidx_activity_ktx
+    implementation Deps.androidx_fragment
+    implementation Deps.androidx_fragment_ktx
+
+    testImplementation Deps.test_junit
+    androidTestImplementation Deps.test_androidx_rules
+    androidTestImplementation Deps.test_androidx_runner
+    androidTestImplementation Deps.test_androidx_espressocore
+}

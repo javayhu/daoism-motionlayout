@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">道</string>
+    <string name="daoism">道</string>
+    <string name="daoism_boy">小道士</string>
+    <string name="daoism_full">道生一，一生二，二生三，三生万物</string>
+    <string name="image_description">图片描述</string>
+</resources>

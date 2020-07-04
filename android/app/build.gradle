@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion Config.compile_sdk_version
+    buildToolsVersion Config.build_tools_version
+
+    defaultConfig {
+        applicationId Config.applicationId
+        minSdkVersion Config.min_sdk_version
+        targetSdkVersion Config.target_sdk_version
+        versionCode Config.versionCode
+        versionName Config.versionName
+    }
+
+    kotlinOptions {
+        jvmTarget = Config.java_version
+        freeCompilerArgs += ["-Xopt-in=kotlin.RequiresOptIn"]
+    }
+
+    compileOptions {
+        sourceCompatibility Config.java_version
+        targetCompatibility Config.java_version
+    }
+
+    packagingOptions {
+        exclude 'META-INF/atomicfu.kotlin_module'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation project(path: ':library-ui')
+    implementation project(path: ':library-router')
+
+    implementation Deps.kotlin_stdlib
+    implementation Deps.kotlin_coroutines_core
+    implementation Deps.kotlin_coroutines_android
+
+    implementation Deps.androidx_core_ktx
+    implementation Deps.androidx_material
+    implementation Deps.androidx_appcompat
+    implementation Deps.androidx_recyclerview
+    implementation Deps.androidx_constraint_layout
+    implementation Deps.androidx_paging_common
+    implementation Deps.androidx_paging_runtime
+    implementation Deps.androidx_preference
+    implementation Deps.androidx_activity
+    implementation Deps.androidx_activity_ktx
+    implementation Deps.androidx_fragment
+    implementation Deps.androidx_fragment_ktx
+
+    implementation Deps.androidx_room_runtime
+    kapt Deps.androidx_room_compiler
+    implementation Deps.androidx_room_ktx
+
+    implementation Deps.androidx_lifecycle_extensions
+    kapt Deps.androidx_lifecycle_compiler
+    implementation Deps.androidx_lifecycle_ktx
+
+    implementation Deps.library_timer
+    implementation Deps.library_retrofit
+    implementation Deps.library_retrofit_mock
+    implementation Deps.library_retrofit_convert_gson
+    implementation Deps.library_okhttp_logging_interceptor
+
+    androidTestImplementation Deps.test_androidx_rules
+    androidTestImplementation Deps.test_androidx_runner
+    androidTestImplementation Deps.test_androidx_espressocore
+}

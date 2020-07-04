@@ -1,0 +1,4 @@
+include ':library-router'
+include ':library-ui'
+include ':app'
+rootProject.name = "daoism"

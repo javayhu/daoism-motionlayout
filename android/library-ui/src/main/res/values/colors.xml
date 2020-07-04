@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  https://material.io/resources/color  -->
+    <!-- 以阴阳图中黑色部分颜色#4f4b5a为PrimaryDark计算出来的Primary和Accent -->
+    <color name="color_primary">#7b7787</color>
+    <color name="color_primary_dark">#4f4b5a</color>
+    <color name="color_accent">#aaa6b7</color>
+
+    <color name="color_text_light">@color/color_primary_dark</color>
+    <color name="color_text_dark">@color/color_ying</color>
+
+    <color name="color_ying">#ededee</color>
+    <color name="color_yang">#4f4b5a</color>
+
+    <color name="color_white">@android:color/white</color>
+    <color name="color_transparent">@android:color/transparent</color>
+    <color name="color_semi_transparent">#80000000</color>
+
+</resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeMotionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    app:layoutDescription="@xml/activity_home_scene"
+    tools:context=".home.HomeActivity">
+
+    <ImageView
+        android:id="@+id/daoismImageView"
+        android:layout_width="@dimen/default_action_icon_size"
+        android:layout_height="@dimen/default_action_icon_size"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:clickable="true"
+        android:contentDescription="@string/image_description"
+        android:focusable="true"
+        android:src="@drawable/ic_daoism"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/settingsImageView"
+        android:layout_width="@dimen/default_action_icon_size"
+        android:layout_height="@dimen/default_action_icon_size"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:clickable="true"
+        android:contentDescription="@string/image_description"
+        android:focusable="true"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/daoismTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_middle"
+        android:ellipsize="marquee"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="@string/daoism_boy"
+        android:textColor="@color/color_text_light"
+        android:textSize="@dimen/text_size_title"
+        app:layout_constraintBottom_toBottomOf="@id/daoismImageView"
+        app:layout_constraintStart_toEndOf="@+id/daoismImageView"
+        app:layout_constraintTop_toTopOf="@+id/daoismImageView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/toolsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/default_padding"
+        android:paddingHorizontal="@dimen/padding_small"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/daoismImageView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        tools:itemCount="12"
+        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/item_animal"
+        tools:spanCount="3" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

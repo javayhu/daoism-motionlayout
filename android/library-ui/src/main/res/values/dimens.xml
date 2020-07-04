@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_action_icon_size">36dp</dimen>
+
+    <dimen name="default_margin">@dimen/margin_large</dimen>
+    <dimen name="default_padding">@dimen/padding_large</dimen>
+
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_middle">8dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_middle">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+
+    <dimen name="actionbar_height">48dp</dimen>
+    <dimen name="statusbar_height">25dp</dimen>
+
+    <dimen name="icon_size_small">32dp</dimen>
+    <dimen name="icon_size_middle">64dp</dimen>
+    <dimen name="icon_size_large">128dp</dimen>
+
+    <dimen name="text_size_title">16sp</dimen>
+    <dimen name="text_size_normal">14sp</dimen>
+</resources>

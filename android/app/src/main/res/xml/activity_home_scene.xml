@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+           <KeyAttribute
+               motion:motionTarget="@+id/daoismImageView"
+               motion:framePosition="0"
+               android:scaleX="2" />
+           <KeyAttribute
+               motion:motionTarget="@+id/daoismImageView"
+               motion:framePosition="0"
+               android:scaleY="2" />
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/daoismImageView"
+            android:layout_width="@dimen/icon_size_large"
+            android:layout_height="@dimen/icon_size_large"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:rotation="720"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible"/>
+        <Constraint
+            android:id="@+id/settingsImageView"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="@dimen/default_action_icon_size"
+            android:layout_height="@dimen/default_action_icon_size"
+            android:layout_marginEnd="@dimen/default_margin"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/default_margin"
+            android:visibility="invisible" />
+        <Constraint
+            android:id="@+id/daoismTextView"
+            motion:layout_constraintStart_toEndOf="@id/daoismImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@id/daoismImageView"
+            android:layout_marginStart="@dimen/margin_middle"
+            motion:layout_constraintTop_toTopOf="@id/daoismImageView"
+            android:visibility="invisible" />
+        <Constraint
+            android:id="@+id/toolsRecyclerView"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/daoismImageView"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:visibility="invisible" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/daoismImageView"
+            android:layout_width="@dimen/default_action_icon_size"
+            android:layout_height="@dimen/default_action_icon_size"
+            android:layout_marginStart="@dimen/default_margin"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/default_margin"
+            android:visibility="visible" />
+        <Constraint
+            android:id="@+id/settingsImageView"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="@dimen/default_action_icon_size"
+            android:layout_height="@dimen/default_action_icon_size"
+            android:layout_marginEnd="@dimen/default_margin"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/default_margin"
+            android:visibility="visible" />
+        <Constraint
+            android:id="@+id/daoismTextView"
+            motion:layout_constraintStart_toEndOf="@id/daoismImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@id/daoismImageView"
+            android:layout_marginStart="@dimen/margin_middle"
+            motion:layout_constraintTop_toTopOf="@id/daoismImageView"
+            android:visibility="visible" />
+        <Constraint
+            android:id="@+id/toolsRecyclerView"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/daoismImageView"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0" />
+    </ConstraintSet>
+</MotionScene>

@@ -1,0 +1,61 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath Deps.tools_gradle_android
+        classpath Deps.tools_kotlin_gradle_plugin
+        classpath Deps.tools_gradle_versions_plugin
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+        jcenter()
+        maven { url "https://www.jitpack.io" }
+    }
+}
+
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            //classpath引入了tools_gradle_versions_plugin之后才能apply这个plugin
+            apply plugin: "com.github.ben-manes.versions"
+
+            android {
+                buildToolsVersion Config.build_tools_version
+                compileSdkVersion Config.compile_sdk_version
+
+                defaultConfig {
+                    minSdkVersion Config.min_sdk_version
+                    targetSdkVersion Config.target_sdk_version
+                    testInstrumentationRunner Config.androidx_test_runner
+                }
+
+                compileOptions {
+                    sourceCompatibility Config.java_version
+                    targetCompatibility Config.java_version
+                }
+
+                //styletransfer中会用到assets/tflite文件，不要压缩这类文件
+                aaptOptions {
+                    noCompress "tflite"
+                    noCompress "lite"
+                }
+
+                //coil库需要声明jvmTarget是1.8 https://coil-kt.github.io/coil/getting_started/
+                kotlinOptions {
+                    jvmTarget = "1.8"
+                }
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

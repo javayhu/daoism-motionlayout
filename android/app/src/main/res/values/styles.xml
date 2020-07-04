@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- 首页是从闪屏页的动画过渡过来的，要调整默认的进入动画 -->
+    <style name="AppTheme.Home">
+        <item name="android:windowAnimationStyle">@style/HomeWindowAnimationStyle</item>
+    </style>
+
+    <style name="HomeWindowAnimationStyle">
+        <item name="android:windowEnterAnimation">@android:anim/linear_interpolator</item>
+    </style>
+
+    <!--  闪屏页  -->
+    <style name="AppTheme.Splash">
+        <!-- 应用启动时闪屏的进入动画默认由系统决定，例如自底向上或者自右向左推入的动画 -->
+        <item name="android:windowAnimationStyle">@style/SplashWindowAnimationStyle</item>
+
+        <!--<item name="android:windowBackground">@null</item>-->
+        <!--<item name="android:windowBackground">@color/color_transparent</item>-->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+    </style>
+
+    <style name="SplashWindowAnimationStyle">
+        <item name="android:windowEnterAnimation">@android:anim/linear_interpolator</item>
+    </style>
+</resources>
